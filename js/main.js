@@ -30,8 +30,7 @@ function renderHTML() {
   const todo_template = todos.map(t => {
     return '<li class="c-todo"><input id="completed-' + t[0] + '" class="c-todo__completed' + 
       (t[1] ? ' is-completed" checked="true"' : '" ') + 'type="checkbox">' +
-      '<label for="completed-'+ t[0] +'" class="c-todo__check"> </label>' +
-      '<h2 class="c-todo__title">' + t[2] + '</h2>' +
+      '<label for="completed-'+ t[0] +'" class="c-todo__title">' + t[2] + '</label>' +
       '<button class="c-todo__delete"><i class="fas fa-trash"></i></button></li>'
   })
 
@@ -52,12 +51,11 @@ function renderHTML() {
   completed.forEach((elemento, i) => {
     elemento.addEventListener('change', function () {
       if (this.checked && !this.classList.contains('is-completed')) {
-        this.classList.add('is-completed');
         todos[i][1] = true;
       } else if (!this.checked && this.classList.contains('is-completed')) {
-        this.classList.remove('is-completed');
         todos[i][1] = false;
       }
+      saveTodos();
     })
   })
 }
