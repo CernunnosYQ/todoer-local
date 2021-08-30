@@ -28,15 +28,15 @@ function createTodo() {
 
 function renderHTML() {
   const todo_template = todos.map(t => {
-    return '<li class="c-todo"><input id="completed-' + t[0] + '" class="c-todo__completed' + 
+    return '<li class="todo"><input id="completed-' + t[0] + '" class="todo__completed' + 
       (t[1] ? ' is-completed" checked="true"' : '" ') + 'type="checkbox">' +
-      '<label for="completed-'+ t[0] +'" class="c-todo__title">' + t[2] + '</label>' +
-      '<button class="c-todo__delete"><i class="fas fa-trash"></i></button></li>'
+      '<label for="completed-'+ t[0] +'" class="todo__title">' + t[2] + '</label>' +
+      '<button class="todo__delete"><i class="fas fa-trash"></i></button></li>'
   })
 
   todo_list.innerHTML = todo_template.join('');
 
-  const delete_todo = document.querySelectorAll('.c-todo__delete');
+  const delete_todo = document.querySelectorAll('.todo__delete');
 
   delete_todo.forEach((elemento, i) => {
     elemento.onclick = () => {
@@ -46,7 +46,7 @@ function renderHTML() {
     }
   })
 
-  const completed = document.querySelectorAll('.c-todo__completed');
+  const completed = document.querySelectorAll('.todo__completed');
 
   completed.forEach((elemento, i) => {
     elemento.addEventListener('change', function () {

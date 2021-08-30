@@ -23,7 +23,7 @@ header {
   padding: .5rem;
 }
 
-.c-title {
+.title {
   width: 100%;
 
   margin: 0;
@@ -32,13 +32,13 @@ header {
   text-align: center;
 }
 
-.c-form {
+.form {
   display: flex;
 
   padding: .5rem;
 }
 
-.c-form__input {
+.form__input {
   flex-grow: 8;
 
   margin: 0 .5rem;
@@ -50,20 +50,20 @@ header {
   border: none;
 }
 
-.c-form__btn {
+.form__btn {
   flex-grow: 2;
 
   margin: 0 .5rem;
 }
 
-.c-btn {
+.btn {
   background: #1976D2;
   color: white;
 
   border: none;
 }
 
-.c-btn:hover {
+.btn:hover {
   background: #2196F3;
 }
 
@@ -72,35 +72,42 @@ header {
     display: flex;
   }
 
-  .c-title {
+  .title {
     flex-grow: 0;
     text-align: left;
     padding-left: .5rem;
   }
 
-  .c-form {
+  .form {
     width: 100%;
   }
 }
 
-.c-todo-list {
-  margin: 1rem .5rem;
-  padding: 0 1rem;
+.todo-list {
+  width: 100%;
 }
 
-.c-todo {
-  padding: .5rem .1rem;
-  border-bottom: 1px solid #666;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#todo-list__completed {
+  width: 10%;
 }
 
-.c-todo__completed {
+#todo-list__title {
+  width: 25%;
+}
+
+#todo-list__description {
+  width: 55%;
+}
+
+.todo {
+  text-align: center;
+}
+
+.todo__completed {
   display: none;
 }
 
-.c-todo__title {
+.todo__title {
   padding: 0;
   margin: 0;
   line-height: 1;
@@ -109,7 +116,7 @@ header {
   flex-grow: 8;
 }
 
-.c-todo__title::before {
+.todo__title::before {
   content: "";
   float: left;
   margin: 0 1.5rem 0 .5rem;
@@ -119,16 +126,16 @@ header {
   background: #ddd;
 }
 
-.c-todo__completed:checked + .c-todo__title {
+.todo__completed:checked + .todo__title {
   text-decoration: line-through;
   color: #666;
 }
 
-.c-todo__completed:checked + .c-todo__title::before {
+.todo__completed:checked + .todo__title::before {
   border-color: #1976D2;
 }
 
-.c-todo__completed:checked + .c-todo__title::after {
+.todo__completed:checked + .todo__title::after {
   content: "";
   float: left;
   margin: .1rem -2.35rem;
@@ -140,24 +147,28 @@ header {
   transform: rotate(45deg);
 }
 
-.c-todo__title:hover:before,
-.c-todo__title:hover:after {
+.todo__title:hover:before,
+.todo__title:hover:after {
   border-color: #2196F3;
 }
 
-.c-todo__completed:checked + .c-todo__title:hover:before,
-.c-todo__completed:checked + .c-todo__title:hover:after {
+.todo__completed:checked + .todo__title:hover:before,
+.todo__completed:checked + .todo__title:hover:after {
   border-color: #2196F3;
 }
 
-.c-todo__delete {
+.todo__delete {
   color: #ddd;
   background: none;
   border: none;
 }
 
-.c-todo__delete:hover {
+.todo__delete:hover {
   color: #d50000 !important;
   transform: scale(1.2);
   transition: all .3s;
+}
+
+th, td {
+  border: 2px solid #ddd;
 }
